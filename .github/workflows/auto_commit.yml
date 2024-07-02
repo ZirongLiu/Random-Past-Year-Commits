@@ -1,4 +1,4 @@
-name: Random Past Year Commits
+name: Random Past 15 Days Commits
 
 on:
   workflow_dispatch:
@@ -28,7 +28,7 @@ jobs:
           import random
           from datetime import datetime, timedelta
 
-          # 生成过去一年中的每一天
+          # 生成过去15天中的每一天
           days = [datetime.now() - timedelta(days=i) for i in range(15)]
 
           for day in days:
@@ -43,7 +43,7 @@ jobs:
                   os.system('git config --local user.name "ZirongLiu"')
                   
                   # 创建一个空提交并设置日期
-                  os.system(f'GIT_AUTHOR_DATE="{commit_date}" GIT_COMMITTER_DATE="{commit_date}" git commit --allow-empty -m "updata"')
+                  os.system(f'GIT_AUTHOR_DATE="{commit_date}" GIT_COMMITTER_DATE="{commit_date}" git commit --allow-empty -m "update"')
 
           # 更新远程仓库URL
           os.system('git remote set-url origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}')
