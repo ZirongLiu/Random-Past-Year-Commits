@@ -29,7 +29,7 @@ jobs:
           from datetime import datetime, timedelta
 
           # 生成过去一年中的每一天
-          days = [datetime.now() - timedelta(days=i) for i in range(365)]
+          days = [datetime.now() - timedelta(days=i) for i in range(15)]
 
           for day in days:
               # 每天生成0到10个提交
