@@ -33,7 +33,7 @@ jobs:
 
           for day in days:
               # 每天生成0到10个提交
-              num_commits = random.randint(0, 10)
+              num_commits = random.randint(1, 10)
               
               for _ in range(num_commits):
                   commit_date = day.strftime('%Y-%m-%dT%H:%M:%S')
