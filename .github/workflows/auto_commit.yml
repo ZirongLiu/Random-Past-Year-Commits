@@ -25,10 +25,10 @@ jobs:
             random_value=$((RANDOM % 100)) # 生成0到99之间的随机数，用于决定当天的提交数量级别
             
             # 根据随机数值决定当天的提交数量级别
-            if [ $random_value -lt 50 ]; then
-              num_commits=$(shuf -i 0-2 -n 1) # 浅绿色：每天1到2个提交（50%的概率）
-            elif [ $random_value -lt 70 ]; then
-              num_commits=$(shuf -i 3-4 -n 1) # 稍浅绿色：每天3到4个提交（20%的概率）
+            if [ $random_value -lt 30 ]; then
+              num_commits=0 # 50%的概率没有提交
+            elif [ $random_value -lt 50 ]; then
+              num_commits=$(shuf -i 1-4 -n 1) # 稍浅绿色：每天3到4个提交（20%的概率）
             elif [ $random_value -lt 85 ]; then
               num_commits=$(shuf -i 5-6 -n 1) # 中等绿色：每天5到6个提交（15%的概率）
             elif [ $random_value -lt 95 ]; then
